@@ -182,7 +182,6 @@ public class PanelRegistrarRestaurantes extends JPanel {
 	
 	public void cargarCombo(ArrayList<String> listaReg) {
 		dcbReg.removeAllElements();
-		dcbReg.addElement("TODAS");
 		dcbReg.addAll(listaReg);
 	}
 	

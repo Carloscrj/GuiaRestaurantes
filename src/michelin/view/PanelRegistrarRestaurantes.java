@@ -34,6 +34,9 @@ public class PanelRegistrarRestaurantes extends JPanel {
 	public static final String GUARDAR_DATOS = "Guardar Datos";
 	public static final String LIMPIAR_DATOS = "Limpiar Datos";
 	public static final String[] COCINA_TIPO = {"Creativa", "Moderna", "Tradicional", "Regional", "Fusión"};
+	public static final String[] REGIONES = {"Andalucía", "Aragón", "Asturias", "Islas Baleares", "Cantabria", "Islas Canarias",
+			"Castilla - La Mancha",  "Castilla y León", "Cataluña", "Galicia", "Extremadura", "Madrid", "Murcia", "Navarra", 
+			"País Vasco", "La Rioja", "Comunidad Valenciana", "Ceuta", "Melilla", "Aragón"};
 	
 	public JTextField txtNombre;
 	public JTextField txtCiudad;
@@ -44,7 +47,6 @@ public class PanelRegistrarRestaurantes extends JPanel {
 	public JTextField txtWeb;
 	public JComboBox <String>cmbCocina;
 	public JComboBox <String>cmbRegion;
-	public DefaultComboBoxModel<String> dcbReg;
 	public JButton btnGuardarDatos;
 	public JButton btnLimpiarDatos;
 	public JSpinner spnDistincion;
@@ -82,9 +84,8 @@ public class PanelRegistrarRestaurantes extends JPanel {
 		add(lblRegion);
 		
 		cmbRegion = new JComboBox<String>();
-		dcbReg = new DefaultComboBoxModel<String>();
-		cmbRegion.setModel(dcbReg);
-		cmbRegion.setBounds(112, 189, 81, 21);
+		cmbRegion.setModel(new DefaultComboBoxModel<String>(REGIONES));
+		cmbRegion.setBounds(112, 189, 167, 21);
 		add(cmbRegion);
 		
 		JLabel lblCiudad = new JLabel(CIUDAD);
@@ -178,11 +179,6 @@ public class PanelRegistrarRestaurantes extends JPanel {
 				error, //mensaje
 				titulo, //titulo ventana
 				JOptionPane.INFORMATION_MESSAGE); //tipo icono de la ventana 
-	}
-	
-	public void cargarCombo(ArrayList<String> listaReg) {
-		dcbReg.removeAllElements();
-		dcbReg.addAll(listaReg);
 	}
 	
 	public void limpiarPanel() { //método para llamar en el controlador y así deseleccionar cuando seleccionamos "sin síntomas"

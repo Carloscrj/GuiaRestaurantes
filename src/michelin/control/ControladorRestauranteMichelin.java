@@ -41,9 +41,6 @@ public class ControladorRestauranteMichelin implements ActionListener {
 				ventana.cargarPanel(paConsultar);
 				paConsultar.hacerVisibleScrp(false);
 			} else if (e.getActionCommand().equals(VPrincipal.MNTN_REG_RESTAURANTES)) {
-				ArrayList<String> listaComboBox = new ArrayList<String>();
-				listaComboBox = gp.obtenerValoresCombo();
-				paRegistrar.cargarCombo(listaComboBox);
 				ventana.cargarPanel(paRegistrar);
 			} else if (e.getActionCommand().equals(VPrincipal.MNTN_MOD_RESTAURANTES)) {
 				ArrayList<String> listaComboBox = new ArrayList<String>();
@@ -102,7 +99,9 @@ public class ControladorRestauranteMichelin implements ActionListener {
 							if (resp== JOptionPane.YES_OPTION) {
 								ArrayList<Restaurante> listaRestaurantes = new ArrayList<Restaurante>();
 								gp.eliminarRestaurante(nombreRestaurante);
-								listaRestaurantes = gp.selecccionarRestaurante();
+								String region = paConsultar.obtenerRegion();
+								int distincion = paConsultar.obtenerDistincion();
+								listaRestaurantes = gp.obtenerRestauranteRegionYdistincion(region, distincion);
 								paConsultar.rellenarTabla(listaRestaurantes);
 								paConsultar.hacerVisibleScrp(true);
 							}

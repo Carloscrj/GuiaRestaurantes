@@ -69,7 +69,7 @@ public class PanelConsultaRestaurantes extends JPanel {
 		cmbRegion = new JComboBox<String>();
 		dcbReg = new DefaultComboBoxModel<String>();
 		cmbRegion.setModel(dcbReg);
-		cmbRegion.setBounds(102, 151, 85, 21);
+		cmbRegion.setBounds(102, 151, 150, 21);
 		add(cmbRegion);
 		
 		cmbDistincion = new JComboBox<String>();

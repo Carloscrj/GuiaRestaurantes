@@ -87,7 +87,7 @@ public class PanelModificarRestaurantes extends JPanel {
 		cmbRegion = new JComboBox<String>();
 		dcbReg = new DefaultComboBoxModel<String>();
 		cmbRegion.setModel(dcbReg);
-		cmbRegion.setBounds(112, 189, 81, 21);
+		cmbRegion.setBounds(112, 189, 171, 21);
 		add(cmbRegion);
 		
 		JLabel lblCiudad = new JLabel(CIUDAD);

@@ -358,7 +358,7 @@ public class GuiaMichelinPersistencia {
 		
 		
 		String query = "SELECT DISTINCT " + GuiaMichelinContract.REGION
-								 + " FROM " + GuiaMichelinContract.NOM_TABLA;
+								 + " FROM " + GuiaMichelinContract.NOM_TABLA + " ORDER BY " + GuiaMichelinContract.REGION;
 		
 		Connection con = null;
 		Statement stmt = null;
